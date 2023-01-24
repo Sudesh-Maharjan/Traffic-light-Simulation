@@ -18,16 +18,26 @@ def main():
     yellow = (255, 255, 0)
 
     black = (0, 0, 0)
+    white = (255, 255, 255)
 
     #initial state of the traffic light
     current_state = "red"
 
     clock = pygame.time.Clock()
+
+    
+
     #Program exit garnako lagi
     run = True
     while run:
         clock.tick(60)
-        screen.fill((0, 0,0))
+        screen.fill(white)
+        pygame.draw.line(screen, black, (350,100), (450,100))
+        pygame.draw.line(screen, black, (350,400), (450,400))
+        pygame.draw.line(screen, black, (350,100), (350,400))
+        pygame.draw.line(screen, black, (450,100), (450,400))
+        pygame.draw.line(screen, black, (350,200), (450,200))
+        pygame.draw.line(screen, black, (350,300), (450,300))
         #Traffic light screen ma draw garnako lagi
         if current_state == "red":
             pygame.draw.circle(screen, black, (400, 350), 20)
